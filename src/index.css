@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 235 84% 4%;
+    --foreground: 280 15% 95%;
+
+    --card: 240 20% 8%;
+    --card-foreground: 280 15% 95%;
+
+    --popover: 240 20% 8%;
+    --popover-foreground: 280 15% 95%;
+
+    --primary: 267 89% 74%;
+    --primary-foreground: 235 84% 4%;
+
+    --secondary: 240 20% 12%;
+    --secondary-foreground: 280 15% 95%;
+
+    --muted: 240 20% 12%;
+    --muted-foreground: 260 10% 65%;
+
+    --accent: 267 89% 74%;
+    --accent-foreground: 235 84% 4%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 240 20% 15%;
+    --input: 240 20% 15%;
+    --ring: 267 89% 74%;
+
+    --radius: 0.75rem;
+
+    /* AI Theme Colors */
+    --ai-purple: 267 89% 74%;
+    --ai-blue: 230 89% 74%;
+    --ai-cyan: 190 89% 74%;
+    --ai-dark: 235 84% 4%;
+    --ai-surface: 240 20% 8%;
+    --ai-border: 240 20% 15%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(267 89% 74%), hsl(230 89% 74%));
+    --gradient-secondary: linear-gradient(135deg, hsl(230 89% 74%), hsl(190 89% 74%));
+    --gradient-hero: linear-gradient(135deg, hsl(235 84% 4%) 0%, hsl(240 20% 8%) 50%, hsl(267 30% 15%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(240 20% 8%) 0%, hsl(240 20% 12%) 100%);
+    
+    /* Shadows */
+    --shadow-glow: 0 0 40px hsl(267 89% 74% / 0.3);
+    --shadow-card: 0 10px 30px -10px hsl(235 84% 4% / 0.5);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 240 20% 8%;
+    --sidebar-foreground: 280 15% 95%;
+    --sidebar-primary: 267 89% 74%;
+    --sidebar-primary-foreground: 235 84% 4%;
+    --sidebar-accent: 240 20% 12%;
+    --sidebar-accent-foreground: 280 15% 95%;
+    --sidebar-border: 240 20% 15%;
+    --sidebar-ring: 267 89% 74%;
+  }
+
+  .dark {
+    --background: 235 84% 4%;
+    --foreground: 280 15% 95%;
+
+    --card: 240 20% 8%;
+    --card-foreground: 280 15% 95%;
+
+    --popover: 240 20% 8%;
+    --popover-foreground: 280 15% 95%;
+
+    --primary: 267 89% 74%;
+    --primary-foreground: 235 84% 4%;
+
+    --secondary: 240 20% 12%;
+    --secondary-foreground: 280 15% 95%;
+
+    --muted: 240 20% 12%;
+    --muted-foreground: 260 10% 65%;
+
+    --accent: 267 89% 74%;
+    --accent-foreground: 235 84% 4%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 240 20% 15%;
+    --input: 240 20% 15%;
+    --ring: 267 89% 74%;
+    
+    --sidebar-background: 240 20% 8%;
+    --sidebar-foreground: 280 15% 95%;
+    --sidebar-primary: 267 89% 74%;
+    --sidebar-primary-foreground: 235 84% 4%;
+    --sidebar-accent: 240 20% 12%;
+    --sidebar-accent-foreground: 280 15% 95%;
+    --sidebar-border: 240 20% 15%;
+    --sidebar-ring: 267 89% 74%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .bg-gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .bg-gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+  
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .bg-gradient-card {
+    background: var(--gradient-card);
+  }
+  
+  .hover-scale {
+    @apply transition-transform duration-300 hover:scale-105;
+  }
+  
+  .story-link {
+    @apply relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
+  }
+}
