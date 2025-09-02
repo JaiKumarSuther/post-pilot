@@ -140,7 +140,7 @@ const Header = () => {
                 </motion.a>
                 <div className="pt-4 space-y-3">
                   <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                    <Button variant="ghost" className="w-full text-white hover:bg-white/10">
+                    <Button variant="ghost" className="w-full text-white hover:text-white">
                       Sign In
                     </Button>
                   </motion.div>

@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Check } from "lucide-react";
 import showcaseVideo from "@/assets/videos/video-2.mp4";
+import aiNeuralBg from "@/assets/ai-neural-bg.jpg";
 
 const BenefitsSection = () => {
   const benefits = [
@@ -12,8 +13,16 @@ const BenefitsSection = () => {
   ];
 
   return (
-    <section className="relative py-20 overflow-hidden bg-gradient-to-br from-purple-900 via-purple-800 to-purple-900">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(139,69,255,0.1)_0%,transparent_70%)]" />
+    <section className="relative py-20 overflow-hidden">
+      <video
+        className="absolute inset-0 w-full h-full object-cover"
+        src={showcaseVideo}
+        autoPlay
+        muted
+        loop
+        playsInline
+      />
+      <div className="absolute inset-0 bg-ai-dark/70" />
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto items-center">
           {/* Left side - Benefits */}
@@ -32,16 +41,14 @@ const BenefitsSection = () => {
             </div>
           </div>
           
-          {/* Right side - Video showcase */}
+          {/* Right side - illustrative image */}
           <div className="relative">
-            <video
-              src={showcaseVideo}
+            <img 
+              src={aiNeuralBg}
+              alt="Neural network visualization"
               className="w-full h-96 object-cover rounded-2xl shadow-2xl"
-              autoPlay
-              muted
-              loop
-              playsInline
             />
+            <div className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-tr from-black/30 via-transparent to-black/20" />
           </div>
         </div>
       </div>

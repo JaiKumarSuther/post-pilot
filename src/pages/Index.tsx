@@ -1,20 +1,23 @@
-import {
-  Header,
-  PinnedCanvas,
-  SectionHost
-} from "@/components";
+import Header from "@/components/Header";
+import HeroSection from "@/components/HeroSection";
+import BenefitsSection from "@/components/BenefitsSection";
+import HowItWorksSection from "@/components/HowItWorksSection";
+import WhyItWinsSection from "@/components/WhyItWinsSection";
+import ZeroHumanEffortsSection from "@/components/ZeroHumanEffortsSection";
+import PricingSection from "@/components/PricingSection";
+import FAQSection from "@/components/FAQSection";
 
 const Index = () => {
   return (
-    <main className="relative z-10 min-h-screen">
-      {/* Pinned 3D Canvas - Fixed background layer */}
-      <PinnedCanvas />
-      
-      {/* Sticky Header overlay */}
+    <main className="min-h-screen bg-background">
       <Header />
-      
-      {/* Scroll-driven sections with 3D transitions */}
-      <SectionHost />
+      <HeroSection />
+      <BenefitsSection />
+      <HowItWorksSection />
+      <WhyItWinsSection />
+      <ZeroHumanEffortsSection />
+      <PricingSection />
+      <FAQSection />
     </main>
   );
 };

@@ -104,7 +104,7 @@ const PricingSection = () => {
         loop
       />
       <div className="absolute inset-0 bg-gradient-to-br from-ai-dark/90 via-ai-dark/70 to-transparent" />
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="mx-auto w-full max-w-screen-2xl px-6 relative z-10">
         <motion.div 
           className="text-center mb-20"
           initial={{ opacity: 0, y: 30 }}
@@ -118,7 +118,7 @@ const PricingSection = () => {
         </motion.div>
         
         <motion.div 
-          className="grid md:grid-cols-4 gap-8 max-w-7xl mx-auto"
+          className="grid md:grid-cols-4 gap-8 max-w-screen-2xl mx-auto"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
