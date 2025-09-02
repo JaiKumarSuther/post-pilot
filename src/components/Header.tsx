@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import logo from "@/assets/postpilot-logo.png";
 // Removed image logo per request; using text logo
 
 const Header = () => {
@@ -27,9 +28,11 @@ const Header = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <div className="h-10 flex items-center text-white font-bold text-xl tracking-wide">
-              POSTPILOT AI
-            </div>
+              <img 
+              src={logo}
+              alt="Neural network visualization"
+              className="w-40 object-cover"
+            />
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -140,9 +143,9 @@ const Header = () => {
                 </motion.a>
                 <div className="pt-4 space-y-3">
                   <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                    <Button variant="ghost" className="w-full text-white hover:text-white">
+                    <button className="w-full text-white hover:text-white">
                       Sign In
-                    </Button>
+                    </button>
                   </motion.div>
                   <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                     <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-700 hover:from-blue-700 hover:to-purple-800">
