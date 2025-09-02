@@ -72,9 +72,14 @@ const Footer = () => {
                                     <input
                                         type="email"
                                         placeholder="Enter your email"
-                                        className="flex-1 px-3 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                        className="flex-1 px-3 py-2 bg-white/10 border border-white/20 rounded-l-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent h-10"
                                     />
-                                   
+                                    <Button 
+                                        size="sm" 
+                                        className="bg-gradient-to-r from-blue-600 to-purple-700 hover:from-blue-700 hover:to-purple-800 rounded-l-none h-10 px-3"
+                                    >
+                                        <ArrowRight className="w-4 h-4" />
+                                    </Button>
                                 </div>
                             </div>
                         </motion.div>

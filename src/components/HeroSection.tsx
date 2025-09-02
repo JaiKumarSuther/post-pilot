@@ -102,9 +102,9 @@ const HeroSection = () => {
             <div className="flex gap-3">
               <Input 
                 placeholder="Enter your blog or website URL"
-                className="bg-white/10 backdrop-blur-md border-white/20 text-white placeholder:text-white/60 shadow-lg text-lg py-4"
+                className="bg-white/10 backdrop-blur-md border-white/20 text-white placeholder:text-white/60 shadow-lg text-lg h-12"
               />
-              <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-700 hover:from-blue-700 hover:to-purple-800 transition-all duration-300 hover:shadow-glow px-6 py-4">
+              <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-700 hover:from-blue-700 hover:to-purple-800 transition-all duration-300 hover:shadow-glow px-6 h-12">
                 <ArrowRight className="w-6 h-6" />
               </Button>
             </div>
