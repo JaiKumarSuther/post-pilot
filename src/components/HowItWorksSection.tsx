@@ -31,7 +31,7 @@ const HowItWorksSection = () => {
       title: "Auto-publish to WordPress",
       description: "Scheduled or instant publish via official REST API. (Draft mode available.)",
       icon: <Globe className="w-8 h-8" />,
-      source: "WordPress Developer Resources"
+      source: "WordPress Developer"
     }
   ];
 
@@ -53,21 +53,21 @@ const HowItWorksSection = () => {
           </h2>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-9xl mx-auto">
           {steps.map((item, index) => (
-            <Card key={index} className="group hover:shadow-glow transition-all duration-300 bg-gradient-to-r from-blue-600/20 to-purple-700/20 backdrop-blur-md border border-blue-500/30 hover:scale-105 animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
-              <CardContent className="p-8 text-center">
-                <div className="mb-6">
-                  <div className="w-20 h-20 bg-gradient-to-r from-blue-600 to-purple-700 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:animate-pulse-glow shadow-glow">
+            <Card key={index} className="group hover:shadow-glow transition-all duration-300 bg-gradient-to-r from-blue-600/20 to-purple-700/20 backdrop-blur-md border border-blue-500/30 hover:scale-105 animate-fade-in flex flex-col h-full min-w-[320px]" style={{ animationDelay: `${index * 0.1}s` }}>
+              <CardContent className="p-10 text-center flex flex-col h-full">
+                <div className="mb-8">
+                  <div className="w-24 h-24 bg-gradient-to-r from-blue-600 to-purple-700 rounded-full flex items-center justify-center mx-auto mb-8 group-hover:animate-pulse-glow shadow-glow">
                     {item.icon}
                   </div>
-                  <div className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-700 bg-clip-text text-transparent mb-3">
+                  <div className="text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-700 bg-clip-text text-transparent mb-4">
                     {item.step}
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-4 text-white leading-tight">{item.title}</h3>
-                <p className="text-white/80 mb-6 leading-relaxed text-base">{item.description}</p>
-                <Badge variant="outline" className="text-sm border-blue-500/30 bg-blue-600/20 backdrop-blur px-4 py-2">
+                <h3 className="text-2xl font-semibold mb-6 text-white leading-tight text-center">{item.title}</h3>
+                <p className="text-white/80 mb-8 leading-relaxed text-lg flex-grow text-center">{item.description}</p>
+                <Badge variant="outline" className="text-base border-blue-500/30 bg-blue-600/20 backdrop-blur px-6 py-3 mt-auto mx-auto w-full text-center flex items-center justify-center">
                   {item.source}
                 </Badge>
               </CardContent>

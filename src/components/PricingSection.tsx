@@ -83,8 +83,8 @@ const PricingSection = () => {
         
         <div className="grid md:grid-cols-4 gap-8 max-w-7xl mx-auto">
           {plans.map((plan, index) => (
-            <Card key={index} className="group hover:shadow-glow transition-all duration-300 bg-gradient-to-br from-blue-600/20 to-purple-700/20 border border-blue-500/30 hover:scale-105 relative">
-              <CardContent className="p-8 text-center">
+            <Card key={index} className="group hover:shadow-glow transition-all duration-300 bg-gradient-to-br from-blue-600/20 to-purple-700/20 border border-blue-500/30 hover:scale-105 relative flex flex-col h-full">
+              <CardContent className="p-8 text-center flex flex-col h-full">
                 {/* Plan icon */}
                 <div className="w-20 h-20 bg-gradient-to-r from-blue-600 to-purple-700 rounded-full flex items-center justify-center mx-auto mb-6">
                   <div className="text-white">
@@ -94,12 +94,12 @@ const PricingSection = () => {
                 
                 <h3 className="text-2xl font-bold mb-3 text-white leading-tight">{plan.name}</h3>
                 <div className="mb-8">
-                  <span className="text-5xl font-bold text-white">
+                  <span className="text-4xl font-bold text-white">
                     {plan.price}
                   </span>
                   <span className="text-white/80 text-lg">{plan.period}</span>
                 </div>
-                <ul className="space-y-4 mb-8">
+                <ul className="space-y-4 mb-8 flex-grow">
                   {plan.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-center gap-3 text-sm text-white/80 leading-relaxed">
                       <Check className="w-5 h-5 text-blue-400 flex-shrink-0" />
@@ -108,7 +108,7 @@ const PricingSection = () => {
                   ))}
                 </ul>
                 <Button 
-                  className="w-full bg-gradient-to-r from-blue-600 to-purple-700 hover:from-blue-700 hover:to-purple-800 transition-all duration-300 py-3 text-base"
+                  className="w-full bg-gradient-to-r from-blue-600 to-purple-700 hover:from-blue-700 hover:to-purple-800 transition-all duration-300 py-3 text-base mt-auto"
                   variant="default"
                 >
                   {plan.name === "Enterprise" ? "Contact Sales" : "Get Started"}
