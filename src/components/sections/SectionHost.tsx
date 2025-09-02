@@ -22,7 +22,7 @@ const SECTIONS = [
 ];
 
 export function SectionHost() {
-  const { activeSection, setActiveSection } = useUIStore();
+  const { activeSection, setActiveSection, setScrollProgress } = useUIStore();
   const [isScrolling, setIsScrolling] = useState(false);
   const scrollTimeoutRef = useRef<NodeJS.Timeout>();
 
@@ -44,6 +44,10 @@ export function SectionHost() {
       if (clampedIndex !== activeSection) {
         setActiveSection(clampedIndex);
       }
+
+      // progress within current viewport
+      const progress = (scrollY % windowHeight) / windowHeight;
+      setScrollProgress(progress);
       
       // Set scrolling to false after a short delay
       scrollTimeoutRef.current = setTimeout(() => {

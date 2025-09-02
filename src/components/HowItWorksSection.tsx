@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Target, Zap, Clock, Globe } from "lucide-react";
 import { motion } from "framer-motion";
-import aiNeuralBg from "@/assets/ai-neural-bg.jpg";
+import video3 from "@/assets/videos/video-3.mp4";
 
 const HowItWorksSection = () => {
   const steps = [
@@ -75,13 +75,15 @@ const HowItWorksSection = () => {
   return (
     <section 
       className="relative py-24 overflow-hidden"
-      style={{
-        backgroundImage: `url(${aiNeuralBg})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed',
-      }}
     >
+      <video 
+        className="absolute inset-0 w-full h-full object-cover"
+        src={video3}
+        autoPlay
+        muted
+        playsInline
+        loop
+      />
       <div className="absolute inset-0 bg-gradient-to-br from-ai-dark/90 via-ai-dark/70 to-transparent" />
       <div className="container mx-auto px-6 relative z-10">
         <motion.div 

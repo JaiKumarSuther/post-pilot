@@ -3,8 +3,8 @@ import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
-import aiHeroBg from "@/assets/ai-hero-bg.jpg";
 import postpilotLogo from "@/assets/postpilot-logo.png";
+import heroVideo from "@/assets/videos/video-1.mp4";
 
 const HeroSection = () => {
   const containerVariants = {
@@ -47,13 +47,15 @@ const HeroSection = () => {
   return (
     <section 
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
-      style={{
-        backgroundImage: `url(${aiHeroBg})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed',
-      }}
     >
+      <video 
+        className="absolute inset-0 w-full h-full object-cover"
+        src={heroVideo}
+        autoPlay
+        muted
+        playsInline
+        loop
+      />
       <div className="absolute inset-0 bg-gradient-to-br from-ai-dark/90 via-ai-dark/70 to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-t from-ai-dark via-transparent to-transparent" />
       

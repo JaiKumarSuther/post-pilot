@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Check } from "lucide-react";
-import personImage from "@/assets/kevin-ku-w7ZyuGYNpRQ-unsplash.jpg";
+import showcaseVideo from "@/assets/videos/video-2.mp4";
 
 const BenefitsSection = () => {
   const benefits = [
@@ -32,12 +32,15 @@ const BenefitsSection = () => {
             </div>
           </div>
           
-          {/* Right side - Person image */}
+          {/* Right side - Video showcase */}
           <div className="relative">
-            <img 
-              src={personImage} 
-              alt="Person with technology" 
+            <video
+              src={showcaseVideo}
               className="w-full h-96 object-cover rounded-2xl shadow-2xl"
+              autoPlay
+              muted
+              loop
+              playsInline
             />
           </div>
         </div>

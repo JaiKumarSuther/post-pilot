@@ -11,7 +11,7 @@ import {
     ArrowRight,
     Heart
 } from "lucide-react";
-import postpilotLogo from "@/assets/postpilot-logo.png";
+// Removed image logo per request
 
 const Footer = () => {
     const footerVariants = {
@@ -54,11 +54,9 @@ const Footer = () => {
                         {/* Company Info */}
                         <motion.div variants={itemVariants} className="lg:col-span-1">
                             <div className="mb-6">
-                                <img
-                                    src={postpilotLogo}
-                                    alt="POSTPILOT AI"
-                                    className="h-12 w-auto mb-4"
-                                />
+                                <div className="h-12 flex items-center text-white font-bold text-2xl tracking-wide mb-4">
+                                    POSTPILOT AI
+                                </div>
                                 <p className="text-gray-300 text-sm leading-relaxed mb-6">
                                     Transform your content strategy with AI-powered blog automation.
                                     Create, publish, and grow your audience with zero human effort.

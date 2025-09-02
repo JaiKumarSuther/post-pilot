@@ -1,17 +1,20 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import aiHeroBg from "@/assets/ai-hero-bg.jpg";
+import video7 from "@/assets/videos/video-7.mp4";
 
 const FooterCTA = () => {
   return (
     <section 
       className="relative py-20 overflow-hidden"
-      style={{
-        backgroundImage: `url(${aiHeroBg})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}
     >
+      <video
+        className="absolute inset-0 w-full h-full object-cover"
+        src={video7}
+        autoPlay
+        muted
+        playsInline
+        loop
+      />
       <div className="absolute inset-0 bg-gradient-to-br from-ai-dark/95 via-ai-dark/85 to-ai-dark/95" />
       <div className="container mx-auto px-6 text-center relative z-10">
         <h2 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent animate-fade-in">

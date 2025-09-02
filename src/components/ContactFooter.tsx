@@ -1,6 +1,6 @@
 import { Phone, Mail } from "lucide-react";
-import postpilotLogo from "@/assets/postpilot-logo.png";
-import personImage from "@/assets/fabio-oyXis2kALVg-unsplash.jpg";
+// Removed image logo per request
+import closingVideo from "@/assets/videos/video-3.mp4";
 
 const ContactFooter = () => {
   return (
@@ -29,22 +29,19 @@ const ContactFooter = () => {
             </div>
           </div>
           
-          {/* Right side - Person image and logo */}
+          {/* Right side - Video and logo */}
           <div className="relative">
-            <img 
-              src={personImage} 
-              alt="Person with technology" 
+            <video
+              src={closingVideo}
               className="w-full h-96 object-cover rounded-2xl shadow-2xl"
+              autoPlay
+              muted
+              loop
+              playsInline
             />
             
             {/* Logo in bottom right */}
-            <div className="absolute bottom-4 right-4">
-              <img 
-                src={postpilotLogo} 
-                alt="POSTPILOT AI" 
-                className="h-16 w-auto"
-              />
-            </div>
+            <div className="absolute bottom-4 right-4 text-white font-semibold">POSTPILOT AI</div>
           </div>
         </div>
       </div>

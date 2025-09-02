@@ -1,29 +1,28 @@
-import { useFrame } from '@react-three/fiber';
-import { useThree } from '@react-three/fiber';
+import { useFrame, useThree } from '@react-three/fiber';
 import { useUIStore } from '@/store/ui';
 import * as THREE from 'three';
 
 export function CameraRig() {
   const { camera } = useThree();
-  const { activeSection } = useUIStore();
-  
-  // Check for reduced motion preference
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const { activeSection, scrollProgress } = useUIStore();
+
+  const prefersReducedMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   useFrame(() => {
-    if (prefersReducedMotion) return;
+    if (prefersReducedMotion) {
+      camera.position.set(0, activeSection * 0.0, 8);
+      camera.lookAt(0, 0, 0);
+      return;
+    }
 
-    // Base camera position
-    const basePosition = new THREE.Vector3(0, 0, 8);
-    
-    // Subtle offset based on active section (very small movement)
-    const yOffset = activeSection * 0.05;
-    const targetPosition = new THREE.Vector3(0, yOffset, 8);
-    
-    // Smooth lerp to target position
-    camera.position.lerp(targetPosition, 0.02);
-    
-    // Always look at the center
+    const targetY = activeSection * 0.08;
+    const target = new THREE.Vector3(0, targetY, 8);
+    camera.position.lerp(target, 0.08);
+
+    const rotX = 0.0;
+    const rotY = 0.0;
+    const rotZ = THREE.MathUtils.degToRad(scrollProgress * 0.6); // ~0.01rad
+    camera.rotation.set(rotX, rotY, rotZ);
     camera.lookAt(0, 0, 0);
   });
 

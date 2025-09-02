@@ -4,7 +4,7 @@ import { CameraRig } from './CameraRig';
 
 export function PinnedCanvas() {
   return (
-    <div className="fixed inset-0 -z-10 pointer-events-none">
+    <div className="fixed inset-0 z-0 pointer-events-none">
       <Canvas
         dpr={[1, 1.5]}
         camera={{ position: [0, 0, 8], fov: 45 }}
@@ -18,6 +18,8 @@ export function PinnedCanvas() {
         <Experience />
         <CameraRig />
       </Canvas>
+      {/* Readability overlay over the WebGL background */}
+      <div className="absolute inset-0 bg-black/45" />
     </div>
   );
 }

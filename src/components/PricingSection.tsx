@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Check } from "lucide-react";
 import { Leaf, Sprout, Trees, Building } from "lucide-react";
 import { motion } from "framer-motion";
-import hunterBg from "@/assets/hunter-harritt-Ype9sdOPdYc-unsplash.jpg";
+import video4 from "@/assets/videos/video-4.mp4";
 
 const PricingSection = () => {
   const plans = [
@@ -94,13 +94,15 @@ const PricingSection = () => {
   return (
     <section 
       className="relative py-24 overflow-hidden"
-      style={{
-        backgroundImage: `url(${hunterBg})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed',
-      }}
     >
+      <video
+        className="absolute inset-0 w-full h-full object-cover"
+        src={video4}
+        autoPlay
+        muted
+        playsInline
+        loop
+      />
       <div className="absolute inset-0 bg-gradient-to-br from-ai-dark/90 via-ai-dark/70 to-transparent" />
       <div className="container mx-auto px-6 relative z-10">
         <motion.div 

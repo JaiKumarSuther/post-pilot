@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import postpilotLogo from "@/assets/postpilot-logo.png";
+// Removed image logo per request; using text logo
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -27,11 +27,9 @@ const Header = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <img 
-              src={postpilotLogo} 
-              alt="POSTPILOT AI" 
-              className="h-10 w-auto"
-            />
+            <div className="h-10 flex items-center text-white font-bold text-xl tracking-wide">
+              POSTPILOT AI
+            </div>
           </motion.div>
 
           {/* Desktop Navigation */}

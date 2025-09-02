@@ -5,7 +5,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
-import fabioBg from "@/assets/fabio-oyXis2kALVg-unsplash.jpg";
+import video5 from "@/assets/videos/video-5.mp4";
 
 const FAQSection = () => {
   const faqs = [
@@ -34,13 +34,15 @@ const FAQSection = () => {
   return (
     <section 
       className="relative py-24 overflow-hidden"
-      style={{
-        backgroundImage: `url(${fabioBg})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed',
-      }}
     >
+      <video
+        className="absolute inset-0 w-full h-full object-cover"
+        src={video5}
+        autoPlay
+        muted
+        playsInline
+        loop
+      />
       <div className="absolute inset-0 bg-gradient-to-br from-ai-dark/90 via-ai-dark/70 to-transparent" />
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-20">

@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import aiBrainBg from "@/assets/ai-brain-bg.jpg";
+import video6 from "@/assets/videos/video-6.mp4";
 
 const WhyItWinsSection = () => {
   const benefits = [
@@ -29,13 +29,15 @@ const WhyItWinsSection = () => {
   return (
     <section 
       className="relative py-24 overflow-hidden"
-      style={{
-        backgroundImage: `url(${aiBrainBg})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed',
-      }}
     >
+      <video
+        className="absolute inset-0 w-full h-full object-cover"
+        src={video6}
+        autoPlay
+        muted
+        playsInline
+        loop
+      />
       <div className="absolute inset-0 bg-gradient-to-br from-ai-dark/90 via-ai-dark/70 to-transparent" />
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-20">

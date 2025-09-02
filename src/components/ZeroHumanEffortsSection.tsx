@@ -1,16 +1,18 @@
-import growtikaBg from "@/assets/growtika-nGoCBxiaRO0-unsplash.jpg";
+import video2 from "@/assets/videos/video-2.mp4";
 
 const ZeroHumanEffortsSection = () => {
   return (
     <section 
-      className="relative py-24 overflow-hidden"
-      style={{
-        backgroundImage: `url(${growtikaBg})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed',
-      }}
+      className="relative min-h-screen flex items-center justify-center py-40 md:py-56 overflow-hidden"
     >
+      <video
+        className="absolute inset-0 w-full h-full object-cover"
+        src={video2}
+        autoPlay
+        muted
+        playsInline
+        loop
+      />
       <div className="absolute inset-0 bg-gradient-to-br from-ai-dark/90 via-ai-dark/70 to-transparent" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.1)_0%,transparent_70%)]" />
       <div className="container mx-auto px-6 text-center relative z-10">

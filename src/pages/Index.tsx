@@ -6,7 +6,7 @@ import {
 
 const Index = () => {
   return (
-    <main className="min-h-screen bg-background">
+    <main className="relative z-10 min-h-screen">
       {/* Pinned 3D Canvas - Fixed background layer */}
       <PinnedCanvas />
       
