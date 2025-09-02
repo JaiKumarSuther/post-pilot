@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import postpilotLogo from "@/assets/postpilot-logo.png";
 
 const Header = () => {
@@ -11,82 +12,152 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-[#0f172a] to-[#1e293b] backdrop-blur-md border-b border-white/10">
+    <motion.header 
+      className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-ai-dark/95 to-ai-dark/95 backdrop-blur-md border-b border-white/10"
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.8 }}
+    >
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex items-center">
+          <motion.div 
+            className="flex items-center"
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
             <img 
               src={postpilotLogo} 
               alt="POSTPILOT AI" 
               className="h-10 w-auto"
             />
-          </div>
+          </motion.div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            <a href="#features" className="text-gray-200 hover:text-white font-medium transition-colors">
+          <motion.nav 
+            className="hidden md:flex items-center space-x-8"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <motion.a 
+              href="#features" 
+              className="text-white/80 hover:text-white transition-colors"
+              whileHover={{ y: -2 }}
+            >
               Features
-            </a>
-            <a href="#pricing" className="text-gray-200 hover:text-white font-medium transition-colors">
+            </motion.a>
+            <motion.a 
+              href="#pricing" 
+              className="text-white/80 hover:text-white transition-colors"
+              whileHover={{ y: -2 }}
+            >
               Pricing
-            </a>
-            <a href="#about" className="text-gray-200 hover:text-white font-medium transition-colors">
+            </motion.a>
+            <motion.a 
+              href="#about" 
+              className="text-white/80 hover:text-white transition-colors"
+              whileHover={{ y: -2 }}
+            >
               About
-            </a>
-            <a href="#contact" className="text-gray-200 hover:text-white font-medium transition-colors">
+            </motion.a>
+            <motion.a 
+              href="#contact" 
+              className="text-white/80 hover:text-white transition-colors"
+              whileHover={{ y: -2 }}
+            >
               Contact
-            </a>
-          </nav>
+            </motion.a>
+          </motion.nav>
 
           {/* CTA Buttons */}
-          <div className="hidden md:flex items-center space-x-4">
-            <Button variant="ghost" className="text-gray-100 hover:text-white hover:bg-white/10">
-              Sign In
-            </Button>
-            <Button className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold shadow-lg">
-              Get Started
-            </Button>
-          </div>
+          <motion.div 
+            className="hidden md:flex items-center space-x-4"
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+          >
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Button variant="ghost" className="text-white hover:bg-white/10">
+                Sign In
+              </Button>
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Button className="bg-gradient-to-r from-blue-600 to-purple-700 hover:from-blue-700 hover:to-purple-800">
+                Get Started
+              </Button>
+            </motion.div>
+          </motion.div>
 
           {/* Mobile Menu Button */}
-          <button
+          <motion.button
             className="md:hidden text-white p-2"
             onClick={toggleMenu}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          </motion.button>
         </div>
 
         {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-white/10 bg-[#0f172a]/95">
-            <nav className="flex flex-col space-y-4">
-              <a href="#features" className="text-gray-200 hover:text-white font-medium transition-colors py-2">
-                Features
-              </a>
-              <a href="#pricing" className="text-gray-200 hover:text-white font-medium transition-colors py-2">
-                Pricing
-              </a>
-              <a href="#about" className="text-gray-200 hover:text-white font-medium transition-colors py-2">
-                About
-              </a>
-              <a href="#contact" className="text-gray-200 hover:text-white font-medium transition-colors py-2">
-                Contact
-              </a>
-              <div className="pt-4 space-y-3">
-                <Button variant="ghost" className="w-full text-gray-100 hover:bg-white/10">
-                  Sign In
-                </Button>
-                <Button className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold shadow-md">
-                  Get Started
-                </Button>
-              </div>
-            </nav>
-          </div>
-        )}
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div 
+              className="md:hidden py-4 border-t border-white/10"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <nav className="space-y-4">
+                <motion.a 
+                  href="#features" 
+                  className="block text-white/80 hover:text-white transition-colors py-2"
+                  whileHover={{ x: 10 }}
+                >
+                  Features
+                </motion.a>
+                <motion.a 
+                  href="#pricing" 
+                  className="block text-white/80 hover:text-white transition-colors py-2"
+                  whileHover={{ x: 10 }}
+                >
+                  Pricing
+                </motion.a>
+                <motion.a 
+                  href="#about" 
+                  className="block text-white/80 hover:text-white transition-colors py-2"
+                  whileHover={{ x: 10 }}
+                >
+                  About
+                </motion.a>
+                <motion.a 
+                  href="#contact" 
+                  className="block text-white/80 hover:text-white transition-colors py-2"
+                  whileHover={{ x: 10 }}
+                >
+                  Contact
+                </motion.a>
+                <div className="pt-4 space-y-3">
+                  <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                    <Button variant="ghost" className="w-full text-white hover:bg-white/10">
+                      Sign In
+                    </Button>
+                  </motion.div>
+                  <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                    <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-700 hover:from-blue-700 hover:to-purple-800">
+                      Get Started
+                    </Button>
+                  </motion.div>
+                </div>
+              </nav>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
-    </header>
+    </motion.header>
   );
 };
 

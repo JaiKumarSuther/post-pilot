@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Check } from "lucide-react";
 import { Leaf, Sprout, Trees, Building } from "lucide-react";
+import { motion } from "framer-motion";
 import hunterBg from "@/assets/hunter-harritt-Ype9sdOPdYc-unsplash.jpg";
 
 const PricingSection = () => {
@@ -63,6 +64,33 @@ const PricingSection = () => {
     }
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 50,
+      scale: 0.95
+    },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.5
+      }
+    }
+  };
+
   return (
     <section 
       className="relative py-24 overflow-hidden"
@@ -75,48 +103,81 @@ const PricingSection = () => {
     >
       <div className="absolute inset-0 bg-gradient-to-br from-ai-dark/90 via-ai-dark/70 to-transparent" />
       <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-20">
+        <motion.div 
+          className="text-center mb-20"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
           <h2 className="text-4xl md:text-6xl font-bold mb-8 text-white leading-tight">
             Choose a Plan That Fits Your Publishing Velocity
           </h2>
-        </div>
+        </motion.div>
         
-        <div className="grid md:grid-cols-4 gap-8 max-w-7xl mx-auto">
+        <motion.div 
+          className="grid md:grid-cols-4 gap-8 max-w-7xl mx-auto"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
           {plans.map((plan, index) => (
-            <Card key={index} className="group hover:shadow-glow transition-all duration-300 bg-gradient-to-br from-blue-600/20 to-purple-700/20 border border-blue-500/30 hover:scale-105 relative flex flex-col h-full">
-              <CardContent className="p-8 text-center flex flex-col h-full">
-                {/* Plan icon */}
-                <div className="w-20 h-20 bg-gradient-to-r from-blue-600 to-purple-700 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <div className="text-white">
-                    {plan.icon}
+            <motion.div
+              key={index}
+              variants={cardVariants}
+              whileHover={{ 
+                y: -8,
+                transition: { duration: 0.3 }
+              }}
+            >
+              <Card className="group hover:shadow-glow transition-all duration-300 bg-gradient-to-br from-blue-600/20 to-purple-700/20 border border-blue-500/30 hover:scale-105 relative flex flex-col h-full">
+                <CardContent className="p-8 text-center flex flex-col h-full">
+                  {/* Plan icon */}
+                  <motion.div 
+                    className="w-20 h-20 bg-gradient-to-r from-blue-600 to-purple-700 rounded-full flex items-center justify-center mx-auto mb-6"
+                    whileHover={{ 
+                      scale: 1.1,
+                      rotate: 5
+                    }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <div className="text-white">
+                      {plan.icon}
+                    </div>
+                  </motion.div>
+                  
+                  <h3 className="text-2xl font-bold mb-3 text-white leading-tight">{plan.name}</h3>
+                  <div className="mb-8">
+                    <span className="text-5xl font-bold text-white">
+                      {plan.price}
+                    </span>
+                    <span className="text-white/80 text-lg">{plan.period}</span>
                   </div>
-                </div>
-                
-                <h3 className="text-2xl font-bold mb-3 text-white leading-tight">{plan.name}</h3>
-                <div className="mb-8">
-                  <span className="text-4xl font-bold text-white">
-                    {plan.price}
-                  </span>
-                  <span className="text-white/80 text-lg">{plan.period}</span>
-                </div>
-                <ul className="space-y-4 mb-8 flex-grow">
-                  {plan.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center gap-3 text-sm text-white/80 leading-relaxed">
-                      <Check className="w-5 h-5 text-blue-400 flex-shrink-0" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                <Button 
-                  className="w-full bg-gradient-to-r from-blue-600 to-purple-700 hover:from-blue-700 hover:to-purple-800 transition-all duration-300 py-3 text-base mt-auto"
-                  variant="default"
-                >
-                  {plan.name === "Enterprise" ? "Contact Sales" : "Get Started"}
-                </Button>
-              </CardContent>
-            </Card>
+                  <ul className="space-y-4 mb-8 flex-grow">
+                    {plan.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-center gap-3 text-sm text-white/80 leading-relaxed">
+                        <Check className="w-5 h-5 text-blue-400 flex-shrink-0" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  <motion.div
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <Button 
+                      className="w-full bg-gradient-to-r from-blue-600 to-purple-700 hover:from-blue-700 hover:to-purple-800 transition-all duration-300 py-3 text-base"
+                      variant="default"
+                    >
+                      {plan.name === "Enterprise" ? "Contact Sales" : "Get Started"}
+                    </Button>
+                  </motion.div>
+                </CardContent>
+              </Card>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

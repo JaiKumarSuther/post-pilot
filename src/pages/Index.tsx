@@ -5,7 +5,8 @@ import {
   WhyItWinsSection,
   ZeroHumanEffortsSection,
   PricingSection,
-  FAQSection
+  FAQSection,
+  Footer
 } from "@/components";
 
 const Index = () => {
@@ -18,6 +19,7 @@ const Index = () => {
       <ZeroHumanEffortsSection />
       <PricingSection />
       <FAQSection />
+      <Footer />
     </main>
   );
 };
