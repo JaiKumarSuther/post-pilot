@@ -1,6 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Check } from "lucide-react";
 import aiBrainBg from "@/assets/ai-brain-bg.jpg";
 
 const WhyItWinsSection = () => {
@@ -54,9 +53,6 @@ const WhyItWinsSection = () => {
                   <div>
                     <h3 className="text-xl font-semibold mb-3 text-white leading-tight">{item.title}</h3>
                     <p className="text-white/80 mb-4 leading-relaxed text-base">{item.description}</p>
-                    <Badge variant="outline" className="text-sm border-blue-500/30 bg-blue-600/20 backdrop-blur px-3 py-1">
-                      {item.source}
-                    </Badge>
                   </div>
                 </div>
               </CardContent>

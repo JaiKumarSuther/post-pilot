@@ -1,5 +1,4 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Target, Zap, Clock, Globe } from "lucide-react";
 import { motion } from "framer-motion";
 import aiNeuralBg from "@/assets/ai-neural-bg.jpg";
@@ -131,16 +130,9 @@ const HowItWorksSection = () => {
                       {item.step}
                     </motion.div>
                   </div>
-                  <h3 className="text-2xl font-semibold mb-6 text-white leading-tight text-center">{item.title}</h3>
-                  <p className="text-white/80 mb-8 leading-relaxed text-lg flex-grow text-center">{item.description}</p>
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <Badge variant="outline" className="text-base border-blue-500/30 bg-blue-600/20 backdrop-blur px-6 py-3 mt-auto mx-auto w-full text-center flex items-center justify-center">
-                      {item.source}
-                    </Badge>
-                  </motion.div>
+                  {/* Title & Description */}
+                  <h3 className="text-xl font-bold mb-4 text-foreground leading-tight">{item.title}</h3>
+                  <p className="text-muted-foreground mb-6 leading-relaxed text-sm flex-grow">{item.description}</p>
                 </CardContent>
               </Card>
             </motion.div>
