@@ -4,6 +4,7 @@ import { Check } from "lucide-react";
 import { Leaf, Sprout, Trees, Building } from "lucide-react";
 import { motion } from "framer-motion";
 import video4 from "@/assets/videos/video-4.mp4";
+import LazyVideo from "@/components/LazyVideo";
 
 const PricingSection = () => {
   const plans = [
@@ -95,7 +96,7 @@ const PricingSection = () => {
     <section 
       className="relative py-24 overflow-hidden"
     >
-      <video
+      <LazyVideo
         className="absolute inset-0 w-full h-full object-cover"
         src={video4}
         autoPlay

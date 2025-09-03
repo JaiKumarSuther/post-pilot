@@ -1,6 +1,7 @@
 import { Phone, Mail } from "lucide-react";
 // Removed image logo per request
 import closingVideo from "@/assets/videos/video-3.mp4";
+import LazyVideo from "@/components/LazyVideo";
 
 const ContactFooter = () => {
   return (
@@ -31,7 +32,7 @@ const ContactFooter = () => {
           
           {/* Right side - Video and logo */}
           <div className="relative">
-            <video
+            <LazyVideo
               src={closingVideo}
               className="w-full h-96 object-cover rounded-2xl shadow-2xl"
               autoPlay

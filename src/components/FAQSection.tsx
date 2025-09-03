@@ -7,6 +7,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { ChevronDown } from "lucide-react";
 import video5 from "@/assets/videos/video-5.mp4";
+import LazyVideo from "@/components/LazyVideo";
 
 const FAQSection = () => {
   const faqs = [
@@ -36,7 +37,7 @@ const FAQSection = () => {
     <section 
       className="relative py-24 overflow-hidden"
     >
-      <video
+      <LazyVideo
         className="absolute inset-0 w-full h-full object-cover"
         src={video5}
         autoPlay

@@ -1,11 +1,12 @@
 import video2 from "@/assets/videos/video-2.mp4";
+import LazyVideo from "@/components/LazyVideo";
 
 const ZeroHumanEffortsSection = () => {
   return (
     <section 
       className="relative min-h-screen flex items-center justify-center py-40 md:py-56 overflow-hidden"
     >
-      <video
+      <LazyVideo
         className="absolute inset-0 w-full h-full object-cover"
         src={video2}
         autoPlay

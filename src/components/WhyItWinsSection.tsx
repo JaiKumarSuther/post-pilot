@@ -1,6 +1,8 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle2, Link as LinkIcon, Sparkles } from "lucide-react";
+import LazyVideo from "@/components/LazyVideo";
+import video6 from "@/assets/videos/video-6.mp4";
 
 const WhyItWinsSection = () => {
   const benefits = [
@@ -35,6 +37,21 @@ const WhyItWinsSection = () => {
       aria-labelledby="why-it-wins-title"
       className="relative overflow-hidden"
     >
+      <LazyVideo
+        className="absolute inset-0 w-full h-full object-cover"
+        src={video6}
+        autoPlay
+        muted
+        playsInline
+        loop
+        eager
+        preload="auto"
+        aria-hidden="true"
+      />
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-gradient-to-br from-ai-dark/90 via-ai-dark/70 to-transparent"
+      />
       {/* Subtle dotted background + gradient blobs */}
       <div
         aria-hidden="true"

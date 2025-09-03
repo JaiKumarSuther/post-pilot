@@ -1,5 +1,6 @@
 import { Briefcase, Headphones, Code2, Rocket } from "lucide-react";
 import showcaseVideo from "@/assets/videos/video-2.mp4";
+import LazyVideo from "@/components/LazyVideo";
 import aiNeuralBg from "@/assets/kevin-ku-w7ZyuGYNpRQ-unsplash.jpg";
 
 const BenefitsSection = () => {
@@ -8,7 +9,7 @@ const BenefitsSection = () => {
       className="relative min-h-0 overflow-hidden"
       style={{ height: "130vh" }}
     >
-      <video
+      <LazyVideo
         className="absolute inset-0 w-full h-full object-cover"
         src={showcaseVideo}
         autoPlay

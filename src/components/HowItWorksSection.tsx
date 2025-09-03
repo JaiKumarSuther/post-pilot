@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Target, Zap, Clock, Globe } from "lucide-react";
 import { motion } from "framer-motion";
 import video3 from "@/assets/videos/video-3.mp4";
+import LazyVideo from "@/components/LazyVideo";
 
 const HowItWorksSection = () => {
   const steps = [
@@ -76,7 +77,7 @@ const HowItWorksSection = () => {
     <section 
       className="relative py-24 overflow-hidden"
     >
-      <video 
+      <LazyVideo 
         className="absolute inset-0 w-full h-full object-cover"
         src={video3}
         autoPlay

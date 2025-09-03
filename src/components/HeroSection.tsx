@@ -5,6 +5,7 @@ import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import postpilotLogo from "@/assets/postpilot-logo.png";
 import heroVideo from "@/assets/videos/video-1.mp4";
+import LazyVideo from "@/components/LazyVideo";
 
 const HeroSection = () => {
   const containerVariants = {
@@ -48,26 +49,20 @@ const HeroSection = () => {
     <section 
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
     >
-      <video 
+      <LazyVideo 
         className="absolute inset-0 w-full h-full object-cover"
         src={heroVideo}
         autoPlay
         muted
         playsInline
         loop
+        eager
+        preload="auto"
       />
       <div className="absolute inset-0 bg-gradient-to-br from-ai-dark/90 via-ai-dark/70 to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-t from-ai-dark via-transparent to-transparent" />
       
-      {/* Logo in top right corner */}
-      <motion.div 
-        className="absolute top-8 right-8 z-20"
-        initial={{ opacity: 0, x: 50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8 }}
-      >
- 
-      </motion.div>
+
       
       <motion.div 
         className="container mx-auto px-6 relative z-10 text-center"

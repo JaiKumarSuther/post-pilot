@@ -1,13 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import video7 from "@/assets/videos/video-7.mp4";
+import LazyVideo from "@/components/LazyVideo";
 
 const FooterCTA = () => {
   return (
     <section 
       className="relative py-20 overflow-hidden"
     >
-      <video
+      <LazyVideo
         className="absolute inset-0 w-full h-full object-cover"
         src={video7}
         autoPlay
