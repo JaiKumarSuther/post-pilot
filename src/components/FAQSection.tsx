@@ -47,7 +47,7 @@ const FAQSection = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-ai-dark/90 via-ai-dark/70 to-transparent" />
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-14">
-          <h2 className="text-4xl md:text-6xl font-bold mb-3 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent leading-tight">
+          <h2 className="text-4xl md:text-6xl font-bold mb-3 text-white leading-tight">
             Frequently Asked Questions
           </h2>
           <p className="text-white/70 max-w-2xl mx-auto">Answers to the most common questions about setup, publishing, and results.</p>

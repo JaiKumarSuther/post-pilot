@@ -66,11 +66,7 @@ const HeroSection = () => {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <img 
-          src={postpilotLogo} 
-          alt="POSTPILOT AI" 
-          className="h-12 w-auto"
-        />
+ 
       </motion.div>
       
       <motion.div 
